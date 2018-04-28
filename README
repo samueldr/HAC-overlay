@@ -1,0 +1,21 @@
+Overlay for HAC-specific things
+===============================
+
+This is for the Nintendo Switch.
+
+This is a Nix overlay that (tries) to include everything to use the *shofel2*
+tethered exploit for the Nintendo Switch (HAC-001) and some bonus goodies.
+
+* * *
+
+It is expected that two systems will be needed to make full use of this
+overlay.
+
+ * A host system to launch the exploit (only x86_64 has been tested).
+ * A build system (AArch64) to build the kernel and system image.
+
+It is possible to use an already-built kernel and system image, if you can
+find one around.
+
+It should also be possible to use the tools provided here to boot non-NixOS
+kernels and images using *shofel2*.
