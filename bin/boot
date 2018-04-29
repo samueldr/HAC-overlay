@@ -1,0 +1,24 @@
+#!/usr/bin/env nix-shell
+#!nix-shell ../default.nix -i bash
+
+set -e
+set -u
+
+project_dir="$(dirname "${BASH_SOURCE[0]}")/../"
+
+_() {
+	printf ' $ %s\n' "$*"
+	"$@"
+}
+
+echo "Shofel2 will be Waiting for device..."
+
+#_ sudo shofel2 artifacts/cbfs.bin artifacts/coreboot.rom
+
+echo "Sleeping a while..."
+
+sleep 2
+
+echo "Loading the kernel..."
+
+_ imx_usb -c "$project_dir/imx_conf/"

@@ -19,3 +19,67 @@ find one around.
 
 It should also be possible to use the tools provided here to boot non-NixOS
 kernels and images using *shofel2*.
+
+
+Booting using this overlay
+--------------------------
+
+Create an `artifact` folder, either in this repository or elsewhere.
+
+The structure should be as such:
+
+    artifacts/
+     → cbfs.bin
+     → coreboot.rom
+     → dtb/tegra210-nintendo-switch.dtb
+     → image/switch.scr.img
+     → kernel/Image.gz
+
+Then, while being in the folder containing the `artifact` folder, execute the
+`bin/boot` script.
+
+E.g.:
+
+```
+
+ $ pwd
+/home/user/HAC-overlay
+ $ ls -l artifacts
+
+total 1040
+-rwxr-xr-x 1 samuel users    2364 Apr 29 16:26 cbfs.bin
+-rw-r--r-- 1 samuel users 1048576 Apr 29 16:26 coreboot.rom
+drwxr-xr-x 2 samuel users    4096 Apr 29 16:27 dtb
+drwxr-xr-x 2 samuel users    4096 Apr 29 16:27 image
+drwxr-xr-x 2 samuel users    4096 Apr 29 16:27 kernel
+ $ bin/boot
+
+[...]
+
+```
+
+Using this structure, even non-NixOS distributions can be used.
+
+
+`bin` folder
+------------
+
+The `bin` folder contains scripts and binstubs useful for booting Linux.
+
+They contain those binstubs that runs the overlay's binaries without entering
+in a `nix-shell`:
+
+ * `shofel2`
+ * `imx_usb`
+
+It additionally contains those scripts
+
+ * `boot` which automates some steps.
+
+
+Building the target (AArch64) components
+----------------------------------------
+
+> TODO
+>
+> It is assumed that it will need an AArch64 host to build them.

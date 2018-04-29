@@ -1,0 +1,9 @@
+#!/usr/bin/env nix-shell
+#!nix-shell ../default.nix -i bash
+
+set -e
+set -u
+
+this_name="${BASH_SOURCE[0]##*/}"
+
+exec "$this_name" "$@"
