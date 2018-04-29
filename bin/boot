@@ -13,7 +13,7 @@ _() {
 
 echo "Shofel2 will be Waiting for device..."
 
-#_ sudo shofel2 artifacts/cbfs.bin artifacts/coreboot.rom
+_ sudo shofel2 artifacts/cbfs.bin artifacts/coreboot.rom
 
 echo "Sleeping a while..."
 
