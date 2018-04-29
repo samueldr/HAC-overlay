@@ -11,5 +11,6 @@ stdenv.mkDerivation rec {
   buildInputs = [
     shofel2
     imx-usb-loader
+    fusee-launcher
   ];
 }

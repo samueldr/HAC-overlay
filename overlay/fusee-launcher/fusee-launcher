@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+PS4=" $ "
+set -x
+
+this_dir="$(dirname "${BASH_SOURCE[0]}")/../"
+
+@OUT@/misc/fusee-launcher.py --relocator "$this_dir/misc/intermezzo.bin" "$@"
